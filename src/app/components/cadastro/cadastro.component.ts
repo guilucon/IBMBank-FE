@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {AccountDetailDialogComponent} from "../accountdetaildialog/account-detail-dialog.component";
 import {CadastroClienteDialogComponent} from "../cadastro-cliente-dialog/cadastro-cliente-dialog.component";
 import {CadastroTransactionDialogComponent} from "../cadastro-transaction-dialog/cadastro-transaction-dialog.component";
 

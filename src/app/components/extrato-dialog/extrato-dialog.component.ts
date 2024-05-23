@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {AccountService} from "../../common/services/AccountService";
 import {AccountDTO} from "../../common/models/AccountDTO";
 import {TransactionDTO} from "../../common/models/TransactionDTO";

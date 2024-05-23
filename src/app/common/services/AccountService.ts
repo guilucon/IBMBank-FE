@@ -22,10 +22,6 @@ export class AccountService {
     return this.http.get<AccountDetailsDTO>(this.apiUrl + "/details/" + accountNumber)
   }
 
-  getAccountById(id: number): Observable<AccountDTO> {
-    return this.http.get<AccountDTO>(this.apiUrl + "/" + id);
-  }
-
   getAccountByAccountNumber(accountNumber: number): Observable<AccountDTO> {
     return this.http.get<AccountDTO>(this.apiUrl + "/" + accountNumber);
   }
