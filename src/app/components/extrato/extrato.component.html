@@ -1,0 +1,22 @@
+<div class="content-container">
+  <mat-card class="custom-card-half">
+    <mat-card-header class="mat-card-header">
+      <mat-card-title>Busca extrato</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="form-group">
+        <mat-select id="accountNumber" name="accountNumber" placeholder="Número da Conta" [(ngModel)]="selectedAccountNumber" (selectionChange)="onAccountNumberChange($event)" required>
+          <mat-option *ngFor="let account of accounts" [value]="account.accountNumber">
+            {{ account.accountNumber }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="selectedAccount">
+        <p><strong>Nome do Cliente:</strong> {{ selectedAccount.clientName }}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-content>
+      <button mat-button (click)="openExtratoDialog()">Buscar Extrato</button>
+    </mat-card-content>
+  </mat-card>
+</div>

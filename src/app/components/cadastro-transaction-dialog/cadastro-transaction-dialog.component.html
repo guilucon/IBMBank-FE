@@ -1,0 +1,39 @@
+<div class="mat-mdc-dialog-container">
+  <mat-card>
+    <mat-card-content class="card-content">
+      <h1>Cadastrar Transação</h1>
+
+      <form (ngSubmit)="onSubmit()" #transactionForm="ngForm">
+        <mat-form-field appearance="fill" class="form-group">
+          <mat-select id="transactionType" name="transactionType" placeholder="Tipo" [(ngModel)]="transacao.transactionType" required #transactionType="ngModel">
+            <mat-option value="" disabled>Selecione o tipo de transação</mat-option>
+            <mat-option value="CREDITO">Crédito</mat-option>
+            <mat-option value="DEBITO">Débito</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+          <input matInput type="number" id="amount" name="amount" placeholder="Valor" [(ngModel)]="transacao.amount" required #amount="ngModel">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+          <mat-select id="accountNumber" name="accountNumber" placeholder="Número da Conta" [(ngModel)]="transacao.accountNumber" (selectionChange)="onAccountNumberChange($event)" required #accountNumber="ngModel">
+            <mat-option *ngFor="let account of accounts" [value]="account.accountNumber">
+              {{ account.accountNumber }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="selectedAccount">
+          <p><strong>Nome do Cliente:</strong> {{ selectedAccount.clientName }}</p>
+        </div>
+
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid || transactionType.value === ''">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

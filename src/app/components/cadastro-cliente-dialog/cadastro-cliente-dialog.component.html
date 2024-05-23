@@ -1,0 +1,26 @@
+<div class="mat-mdc-dialog-container">
+  <mat-card>
+    <mat-card-content class="card-content">
+      <h1>Cadastrar Cliente</h1>
+
+      <form (ngSubmit)="onSubmit()" #clienteForm="ngForm">
+        <mat-form-field appearance="fill" class="form-group">
+          <input matInput type="text" id="nome" name="nome" placeholder="Nome" [(ngModel)]="cliente['name']" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+          <input matInput type="number" id="idade" name="idade" placeholder="Idade" [(ngModel)]="cliente['age']" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+          <input matInput type="email" id="email" name="email" placeholder="Email" [(ngModel)]="cliente['email']" required>
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!clienteForm.valid">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

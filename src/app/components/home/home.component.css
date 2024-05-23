@@ -1,0 +1,10 @@
+.refresh-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content-container {
+  padding: 16px;
+}

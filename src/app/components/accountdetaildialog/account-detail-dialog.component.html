@@ -1,0 +1,13 @@
+<div class="mat-mdc-dialog-container">
+  <mat-card>
+    <mat-card-content>
+      <h1>Detalhes da Conta</h1>
+      <p>Número da Conta: {{ accountDetails.accountNumber }}</p>
+      <p>Saldo: {{ accountDetails.balance | currency}}</p>
+      <p>Nome do Cliente: {{ accountDetails.clientName }}</p>
+      <p>Idade do Cliente: {{ accountDetails.clientAge }}</p>
+      <p>Email do Cliente: {{ accountDetails.clientEmail }}</p>
+      <button mat-button (click)="onClose()">Fechar</button>
+    </mat-card-content>
+  </mat-card>
+</div>
